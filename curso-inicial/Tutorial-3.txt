@@ -6,4 +6,37 @@ put http://seudomio.com/books/10                      atualizar
 patch http://seudomio.com/books/10                    pequena atualização,avatar etc
 delete http://seudomio.com/books/10
 
-//aula6
+-- Tramento de parametros em rotas --
+Queryparams -> são parametros enviados pela rota ex: http://localhost:2333/projects?title=Node
+Acrescentando mais parametros na rota ex: http://localhost:2333/projects?title=node&ower=Aluizio (note o uso do &, é comercial)
+* Pegando os parametros da url e treatando eles:
+    app.get('/projects',(request,response)=>{
+    const query = request.query;
+
+    console.log(query);
+    return response.json([
+        'Projeto 1','Projeto 2','Projeto 3'
+        ]);
+    });
+* usando desestruturação pra validar so oque eu wuero receber:
+    app.get('/projects',(request,response)=>{
+    const {title,autor} = request.query;  <----------------------------------
+
+    console.log(title,autor);
+    return response.json([
+        'Projeto 1','Projeto 2','Projeto 3'
+        ]);
+    });
+/* {{ _.base_url }}/projects?title=node&autor=Cadubrito&docker=xuxa  dessa forma posso passar mais parametro e pegar so os 2 que eu quero mesmo */
+* Roting Parans -> são parametros enviados quando vc vai atualizar ou deletar alguma coisa ...
+    app.put('/projects/:id/owner/:owner_id',(request,response)=>{/* nomde e proprietario */
+    const { id,owner_id } = request.params;
+    console.log(id,owner_id);
+    return response.json([
+        'Projeto 5','Projeto 2','Projeto 3','Projeto 4'
+        ]);
+    });
+
+* Passagem json, para isso temos que configurar com o express
+    const app = express(); //crio uma instancia do express
+    app.use(express.json());
