@@ -1,0 +1,19 @@
+ -- Conceitos --
+* no node os gerenciadores de pacotes são, npm e yarn;
+* quando trabalhamos com javascript o framework usado na maioria das vezes é o "express" apartir dele conseguimos fazer quase tudo do backend;
+* quando queremos criar um novo projeto no node utilizamos $ npm init -y
+* É CRIADO o package.json, arquivo que guarda todas as dependencias e informações do nosso projeto.
+* O node coloca os pacotes de dependencias dentro de uma pasta node_modules que não deve ser enviada para repositorios do github;
+* Diferenças entre dependencias e "dependecias de desenvolvimento", devDependeces só são utilizadas durate o desenvolvimento, no build não precisamos mais;
+
+** instalar todas as depencias do projeto assim que clonar do github
+    $ npm install
+** Instalando o framework do node, express
+    $ npm install express
+**Listar quais bibliotecas ou pacotews estão desatualizas no projeto
+    $ npm outdated
+**Atualizando uma biblioteca ou um pacote desatualizada
+    $ npm update "nomedopacote desatualizado"
+**Desisnstalar uma biblioteca ou um pacote desatualizada
+    $ npm uninstall "nomedopacote desatualizado"
+    

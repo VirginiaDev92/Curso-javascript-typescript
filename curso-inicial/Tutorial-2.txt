@@ -1,0 +1,56 @@
+-- Api rewstifull --
+* Arquitetura rest -> separa o backend e frontend
+
+-- Metodos http --
+
+
+-- codigos de retorno http--
+200 -> sucesso, o que você solicitou foi bem sucedido;
+201 -> sucesso você criou alguma informação;
+204 -> solicitou, mais não precisou retornar nada ex: excluir usuario;
+306 ->Mudança de proxy. Deixou de ser usado;
+404 -> buscou uma pagina que não existe;
+500 -> Servidor não consegue fazer oq você pediu, esta sobrecarregado ou erro na aplicação;
+
+* Como executar aplicação node
+    $ node src/index.js
+* Normalmente nosso backend tem que retornar um json, logo precisamos estruturar a resposta no padrao json
+* Um json pode ser um objeto ou um array de objetos
+* Para recarregar nossa paginas automaticamente instalamos o nodemon
+    $ npm install nodemon -D
+    rodar:
+    npx nodemon  src/index.js
+* Porem podemos automatizar esse script de rodaro projeto a partir do packege.json
+    "scripts": {
+    "start":"npx nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  e rodar $ npm start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ----------------- Até aqui o codigo deve estar -------------------------------
+  const express = require('express');
+
+const app = express(); //crio uma instancia do express
+
+//criando primeira rota
+app.get('/projects',(request,response)=>{
+    return response.json({message:"hellow Dev"});//.send responder com texto
+});
+
+app.listen(3333,()=>{
+    console.log("backend started!   ;)");
+});//digo qual ele vai ouvir

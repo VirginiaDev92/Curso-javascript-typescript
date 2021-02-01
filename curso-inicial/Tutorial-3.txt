@@ -1,0 +1,9 @@
+-- Metodo http --
+get http://seudomio.com/books                         pegar
+get http://seudomio.com/books/10
+post http://seudomio.com/books                        criar 
+put http://seudomio.com/books/10                      atualizar
+patch http://seudomio.com/books/10                    pequena atualização,avatar etc
+delete http://seudomio.com/books/10
+
+//aula6
