@@ -1,0 +1,6 @@
+-- Aula 12
+-- Utilizando knex js para servir de conector com varios banco de dados que eu escolher
+site:knextjs.org/#installation-node
+    $npm install knex --save
+    $npm install sqlite3
+
