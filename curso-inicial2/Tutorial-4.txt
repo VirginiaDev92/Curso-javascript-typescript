@@ -4,3 +4,33 @@
 * criar a pasta src com index dentro
 * importar o express e configurar a porta de escuta do projeto
 * instalar o nodemon como dependencia de desenvolvimento e acrescentar atalho em scripts  no package.json : $  npm install nodemon -D
+
+-- Aula #11 criando projeto com typescript
+* instalar o typescript $ npm install typescript -D
+
+* para iniciar $ npm init -y,
+* instalar o framework express $ npm install express
+* criar a pasta src com server.ts dentro
+* importar o express e configurar a porta de escuta do projeto
+* Ficar atento se ele consegue encontrar uma declaração do tipo tipescript para express se não, tem que instalar
+    $npm i --save-dev @types/express
+* instalar o ts-node-dev que é parecido com o nodemon
+    $npm i ts-node-dev -D
+
+--Definindo configuraçoes do ts--
+$ npx tsc --init (Para inicializar a configuração do typescript,isso gera um tsconfig.json)
+* habilitar o outDir, definir qual o diretorio de saida da transpilação do projeto para javascript ("outDir": "./dist",)
+* habilitar o rootDir,define onde o projeto esta localizado em se ("rootDir": "./src",)
+
+--Compilando o ts e executando--
+Compilando
+$ npx tsc
+executando
+$ node dist/server.js
+
+--Compilando o ts e executando em modo -D--
+* instalar o ts-node-dev que é parecido com o nodemon
+    $npm i ts-node-dev -D
+"scripts": {
+    "dev": "ts-node-dev --inspect --ignore-watch node_modules src/server.ts",
+rodar:$ npm run dev
