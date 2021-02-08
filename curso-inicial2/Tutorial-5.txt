@@ -1,4 +1,15 @@
-import express, { request, response } from 'express';
+-- Separando rotas do server
+*criar uma pasta com nome routes dentro do src, com index.ts
+dentro do index codigficar:
+import { Router } from 'express';
+
+const routes = Router();
+routes.get('/',(request,response)=>{
+    return response.json({message:"Oá mundo ts!"});
+});
+export default routes;
+
+e no server.ts importar o routes
 import routes from './routes';
 import rotes from './routes';//se o nome index nem precisa colocar o index pq ele ja procura
 
