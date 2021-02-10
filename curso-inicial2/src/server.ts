@@ -1,6 +1,5 @@
 import express, { request, response } from 'express';
-import routes from './routes';
-import rotes from './routes';//se o nome index nem precisa colocar o index pq ele ja procura
+import routes from './routes';//se o nome index nem precisa colocar o index pq ele ja procura
 
 const app = express();
 
