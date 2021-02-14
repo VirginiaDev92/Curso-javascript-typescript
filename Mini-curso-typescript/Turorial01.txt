@@ -1,0 +1,13 @@
+-- Url do video do youtube
+-- https://www.youtube.com/watch?v=mRixno_uE2o&list=PLlAbYrWSYTiPanrzauGa7vMuve7_vnXG_
+
+O que é typescript?
+* É um superset  do Javascript, basicamente ele adiciona typagem ao javascript e ele também precisa ser compilado para se tranformar em javascript,
+para ser interpretado pelo node e navegador etc.
+
+Vantagens de usar typescript:
+* Evita resultados inesperados, justamente pela adcição de tipagem que ele disponibiliza ao programador fazendo assim com que seu codigo tenha uma
+melhor legibilidade, melhor forma de prevenir erros ja que o javascript uma variavel pode assumir any valores, o typescript combate justamente isso
+etc, ele avisa entre outras facilidades...
+
+

@@ -9,3 +9,5 @@ site:knextjs.org/#installation-node
 
 - executando as migrations 
 $ npx knex --knexfile knexfile.ts migrations:latest
+
+13min
