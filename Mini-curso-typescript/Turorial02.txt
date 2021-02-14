@@ -1,0 +1,6 @@
+-- instalando o compilador do typescript
+Precisa do node instalado na maquina:
+$ sudo npm install -g typescript
+
+Compilar 
+$ tsc index.ts 

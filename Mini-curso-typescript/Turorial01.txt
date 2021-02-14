@@ -10,4 +10,9 @@ Vantagens de usar typescript:
 melhor legibilidade, melhor forma de prevenir erros ja que o javascript uma variavel pode assumir any valores, o typescript combate justamente isso
 etc, ele avisa entre outras facilidades...
 
+Desvantagens de usar typescript:
+* Precisa ser compilado;
+* Aprendizagem pode confundir um pouco;
+* Erros eneormes enão muito claros;
+
 
