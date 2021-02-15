@@ -24,3 +24,35 @@ function logDetails2(uid:UId,item:string){
 }
 logDetails2(1,"sapato");
 logDetails2("1","sapato");
+
+/** AUla 08 type ALIAS com inserctions ------------------------------------------------------------------------------------------------*/
+//crio os tipos
+type AccountInfo ={
+    id:number;
+    name:string;
+    email?:string   /**? indica que é opcional */
+}
+type Charinfo={
+    telefone:number;
+    idade:number
+}
+
+//preencho os tipos
+const account : AccountInfo = {  /**crio uma account dizendo que ele e do tipo AccountInfo */
+    id:1,
+    name:"clodoaldo",
+    email:"clodoaldo.brtp4@gmail.com"
+}
+const char : Charinfo = {  /**crio uma account dizendo que ele e do tipo AccountInfo */
+    telefone:43756843765,
+    idade:25
+}
+//crio um tipo que é a junçao dos 2
+type Usuario = AccountInfo & Charinfo;
+const user:Usuario ={
+    id:1,
+    name:"clodoaldo",
+    email:"clodoaldo.brtp4@gmail.com",
+    telefone:43756843765,
+    idade:25
+}
