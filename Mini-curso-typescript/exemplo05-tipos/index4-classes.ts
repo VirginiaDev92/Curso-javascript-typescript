@@ -42,9 +42,6 @@ const willace = new CharAccount("willace",25,"wallace@fgsdhjfg.com",99067);
 console.log( willace, willace.getName(), willace.getAge());
 
 
-/**MODIFIES  aula 9                           ------------------------------------------------------------------------------------------------ */
-
-
 
 
 
