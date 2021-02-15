@@ -1,0 +1,5 @@
+-- Definindo regras para typescript
+Pra isso usamos o nosso arquivo tsconfig.json do typescrit e para criae ele:
+$ tsc --init 
+No geral utilizamos o Diretorio final pra ele compilar os arquivos e colocar nesse diretorio dist:
+"outDir": "./dist",                        /* Redirect output structure to the directory. */
