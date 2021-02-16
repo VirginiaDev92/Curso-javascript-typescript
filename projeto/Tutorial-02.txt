@@ -1,0 +1,20 @@
+-- Separando rotas do server
+01 -> Criar uma pasta com nome routes dentro do src, com index.ts
+dentro do index e importar o Router, biblioteca do express para rotas:
+    import { Router } from 'express';
+
+    const routes = Router();
+    routes.get('/',(request,response)=>{
+        return response.json({message:"Oá mundo ts!"});
+    });
+    export default routes;
+
+e no server.ts importar o routes:
+import rotes from './routes';//se o nome index nem precisa colocar o index pq ele ja procura
+
+const app = express();
+app.use(routes);
+
+app.listen(3333,()=>{
+    console.log("Api rodando Perfeitamente na porta 3333.....");
+});
