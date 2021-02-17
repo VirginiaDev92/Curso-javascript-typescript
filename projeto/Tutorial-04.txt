@@ -1,0 +1,12 @@
+-- Aula 15 criando seeds
+- (sementes) São a criação de tabelas com dados ja preenchidos para testes
+01 -> criamos a pasta com as seeds, implementamos as seeds, cadastramos o path no arquivo knex.ts e adicionamos o atalho de chamada no package.json
+    "scripts": {
+    "dev": "ts-node-dev --inspect --ignore-watch node_modules src/server.ts",
+    "knex:migrate":"knex --knexfile knexfile.ts migrate:latest",
+    "knex:seed":"knex --knexfile knexfile.ts seed:run",                <-------------------------------------
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  
+02 -> criando rota para gerenciar arquivos estaticos;
+* partimos para server.ts mesmo

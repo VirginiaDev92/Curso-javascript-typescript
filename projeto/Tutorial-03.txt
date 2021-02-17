@@ -22,4 +22,10 @@ site:knextjs.org/#installation-node
 * criar no diretorio raiz um arquivo knexfile.ts para complementar a conf que ja temos no connection
 * rodar o comando para criar as migrations na tabela $ npx knex --knexfile knexfile.ts migrate:latest
 
-//parei na 14
+05 -> criado as migrations vamos configurar no package.json para rodarlas por la:
+    "scripts": {
+    "dev": "ts-node-dev --inspect --ignore-watch node_modules src/server.ts",
+    "knex:migrate":"knex --knexfile knexfile.ts migrate:latest",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  agora é so rodar $npm run knex:migrate
