@@ -9,4 +9,40 @@
   },
   
 02 -> criando rota para gerenciar arquivos estaticos;
-* partimos para server.ts mesmo
+* partimos para server.ts mesmo e criamos a rota de gerencia de arquivos estaticos com ajuda do express
+  app.use('/uploads',express.static(path.resolve(__dirname,'..','uploads')));
+
+-- Aula 16 criando rotas para listar itens
+* Partimos para o a pasta de rotas,criamos um arquivo items.routes.ts codificamos as rotas;
+* Voltamos para o index e importamos la dentro;
+  import { Router } from 'express';
+  import itemsRoutes from './items.routes';
+
+  const routes = Router();
+  routes.use('/items',itemsRoutes);/** quando eu acessar /items quero que ele var para  itemsRoutes, entao tem que ser ."use"*/
+  /** pq ele esta usando a rota que esta la em itemsRoutes */
+  export default routes;
+
+* fazendo a rota de listagem ter acesso ao banco de dados e trazer a lista de itens:
+  importamos a connecção;
+  import connectionKnex from '../database/connection';
+
+  E fazemos a funcionalidade com async e aweit
+  itemsRoutes.get('/',async (request,response)=>{
+    const listaItems = await connectionKnex('items').select('*');
+    return response.json(listaItems);
+  });
+
+03 -> fazendo serealização de dados, para caminho da imagem
+ *oq é -> é modificar o dado que vem do banco de dados
+  itemsRoutes.get('/',async (request,response)=>{
+    const listaItems = await connectionKnex('items').select('*');
+    const serializedItems = listaItems.map(item =>{
+        return {
+            id:item.id,
+            title:item.title,
+            image_url:`http://localhost:3333/uploads/${item.image}`
+        }
+    });
+    return response.json(serializedItems);
+  });
