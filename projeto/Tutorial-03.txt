@@ -1,0 +1,25 @@
+-- Aula 12
+-- Utilizando knex js para servir de conector com varios banco de dados que eu escolher
+site:knextjs.org/#installation-node
+    $ npm install knex --save
+    $ npm install sqlite3
+02 -> Primeira coisa é criar uma pasta database dentro da src e dentro dela vamos criar as configurações do banco etc;
+03 -> Iniciar a configuração do nosso sqlite
+    import knex from'knex';
+    import path from 'path';
+
+    const connection = knex({
+        client:'sqlite3',
+        connection:{
+            filename:path.resolve(__dirname,'database.sqlite')
+        },
+        useNullAsDefault:true
+    });
+    export default connection;
+04 -> Criando as tabelas usando o recurso de migrations, cada migrations possui 2 metodos fundamentais 1 para fazer a ação desejada e outro para desfazer;
+* Criamos então uma pasta migrations dentro da databse, e la dentro criamos os arquivos. Geralmente 1 para cada entidade;
+* Primeira que vamos criar vai definir a tabela dos locais
+* criar no diretorio raiz um arquivo knexfile.ts para complementar a conf que ja temos no connection
+* rodar o comando para criar as migrations na tabela $ npx knex --knexfile knexfile.ts migrate:latest
+
+//parei na 14

@@ -10,9 +10,9 @@
         console.log("Api rodando....");
     });
 06 -> Ficar atento se ele consegue encontrar uma declaração do tipo tipescript para express se não, tem que instalar
-    $npm i --save-dev @types/express
+    $ npm i --save-dev @types/express
 07 -> Instalar o ts-node-dev que é parecido com o nodemon ele fica escutando as modificações.
-    $npm i ts-node-dev -D
+    $ npm i ts-node-dev -D
 
 08 -> Definindo configuraçoes do ts--
 $ npx tsc --init (Para inicializar a configuração do typescript,isso gera um tsconfig.json)
