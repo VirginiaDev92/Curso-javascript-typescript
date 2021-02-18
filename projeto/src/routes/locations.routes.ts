@@ -19,7 +19,11 @@ locationsRoutes.post('/',async (request,response)=>{
     const transaction = await connectionKnex.transaction();                 /**Inicializando a transação */
     const newIds = await transaction('locations').insert(location);
     const locationId= newIds[0];
-    const locationItems = items.map((item_id:number)=>{
+    const locationItems = items.map(async(item_id:number)=>{
+        const selectedItems = await transaction('items').where('id',item_id).first();
+        if(!selectedItems){
+            return response.status(400).json({message:'item not faud'});
+        }
         return{
             item_id,
             location_id:locationId
