@@ -6,7 +6,7 @@ const locationsRoutes = Router();
 locationsRoutes.post('/',async (request,response)=>{
     const { name,image,email,watsapp,latitude,longititude,city,uf,items} = request.body;
     const location ={
-        name,/** name ta recebendo o valor de name mesmo que foi recebido e destruturado:short sintax */
+        name,                                                              /** name ta recebendo o valor de name mesmo que foi recebido e destruturado:short sintax */
         image:"fake.jpg",
         email,
         watsapp,
@@ -16,7 +16,8 @@ locationsRoutes.post('/',async (request,response)=>{
         uf,
         items
     }
-    const newIds = await connectionKnex('locations').insert(location);
+    const transaction = await connectionKnex.transaction();                 /**Inicializando a transação */
+    const newIds = await transaction('locations').insert(location);
     const locationId= newIds[0];
     const locationItems = items.map((item_id:number)=>{
         return{
@@ -24,8 +25,9 @@ locationsRoutes.post('/',async (request,response)=>{
             location_id:locationId
         }
     });
-    await connectionKnex('locations_items').insert(locationItems);
-    return response.json({id:locationId,...location});/**spred operation */
+    await transaction('locations_items').insert(locationItems);
+    await transaction.commit();                                                                       /**Termina a transação precisa dar o commit,confirmar que tudo ocrreu bem*/
+    return response.json({id:locationId,...location});                    /**spred operation */
 });
 
 export default locationsRoutes;
