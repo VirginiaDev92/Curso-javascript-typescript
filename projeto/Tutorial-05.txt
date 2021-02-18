@@ -1,1 +1,4 @@
 -- Aula 17 rota de criação de local
+
+-- Aula 19  Transações de Database -- arrumar aos 10min
+ * Transações podem ter quantas operações for necessarias e 1 falha ocorrer desfaz rollback
