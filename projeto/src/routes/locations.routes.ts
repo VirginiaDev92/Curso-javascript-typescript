@@ -34,4 +34,19 @@ locationsRoutes.post('/',async (request,response)=>{
     return response.json({id:locationId,...location});                    /**spred operation */
 });
 
+locationsRoutes.get('/:id',async(request,response)=>{
+    const {id} = request.params;
+    const location = await connectionKnex('locations').where('id',id).first();
+    if(!location){
+        return response.status(400).json({mesage:"locations not faund"});
+    }
+
+    const items = await connectionKnex('items').join('location_items','items.id','=','location_items.item_id')
+    .where('location_items.location_id',id).select('items.title');
+
+
+    return response.json({location,items});
+
+});
+
 export default locationsRoutes;
