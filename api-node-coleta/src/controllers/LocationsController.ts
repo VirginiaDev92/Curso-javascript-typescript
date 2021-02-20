@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import knex from '../database/connection';
 
-import env from '../config/env';
+import env from '../../config/env';
 
 class LocationsController {
 

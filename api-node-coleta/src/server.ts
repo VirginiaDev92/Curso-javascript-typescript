@@ -4,7 +4,7 @@ import path from 'path';
 import routes from './routes';
 import {errors} from 'celebrate';
 
-import env from './config/env';
+import env from '../config/env';
 
 const app = express();
 

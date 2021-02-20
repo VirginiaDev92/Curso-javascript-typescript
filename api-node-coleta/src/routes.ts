@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import {celebrate, Joi} from 'celebrate';
 import multer from 'multer';
-import multerConfig from './config/multer';
+import multerConfig from '../config/multer';
 
 import LocationsController from './controllers/LocationsController';
 import ItemsController from './controllers/ItemsController';
